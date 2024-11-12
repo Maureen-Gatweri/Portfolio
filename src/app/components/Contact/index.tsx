@@ -56,11 +56,11 @@ export default function Contact() {
               <h3 className="text-2xl font-semibold mb-4 dark:text-white">Contact Information</h3>
               <div className="flex items-center mb-4">
                 <EnvelopeIcon className="h-6 w-6 text-blue-500 mr-2" />
-                <p className="dark:text-gray-300">amukoaterrymitchell@gmail.com</p>
+                <p className="dark:text-gray-300">maureennmwendwa@gmail.com</p>
               </div>
               <div className="flex items-center mb-4">
                 <PhoneIcon className="h-6 w-6 text-blue-500 mr-2" />
-                <p className="dark:text-gray-300">+254 748375701</p>
+                <p className="dark:text-gray-300">+254 704264110</p>
               </div>
               <div className="flex items-center mb-4">
                 <MapPinIcon className="h-6 w-6 text-blue-500 mr-2" />

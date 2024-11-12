@@ -66,7 +66,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <h2 className="text-4xl font-bold text-black bg-clip-text font-signature">
-            Terry Mitchell
+          Maureen Mwendwa
           </h2>
 
           <button

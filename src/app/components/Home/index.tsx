@@ -24,8 +24,8 @@ const LandingPage: React.FC = () => {
       </div>
       <div>
         <Image
-          src="/images/tee.jpg"
-          alt="Daisy"
+          src="/images/mwendwa.jpg"
+          alt="Maureen"
           width={400}
           height={400}
           className="w-60 h-60 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full border-2 border-gray-300 shadow-md"
