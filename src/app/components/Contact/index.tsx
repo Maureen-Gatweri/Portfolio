@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline'
@@ -71,13 +72,13 @@ export default function Contact() {
                 <a href="https://www.behance.net/terryamukoa" target="_blank" rel="noopener noreferrer">
                   <FaBehance className="h-6 w-6 text-blue-500 hover:text-blue-700" />
                 </a>
-                <a href="https://www.linkedin.com/in/terry-amukoa-703b312b3/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/gatweri-mwendwa-aab087317/" target="_blank" rel="noopener noreferrer">
                   <FaLinkedin className="h-6 w-6 text-blue-500 hover:text-blue-700" />
                 </a>
-                <a href="https://x.com/TerryAmukoa" target="_blank" rel="noopener noreferrer">
+                <a href="https://x.com/Gatweri_Mwendwa" target="_blank" rel="noopener noreferrer">
                   <FaTwitter className="h-6 w-6 text-blue-500 hover:text-blue-700" />
                 </a>
-                <a href="https://github.com/amukoaterry?tab=repositories" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/Maureen-Gatweri" target="_blank" rel="noopener noreferrer">
                   <FaGithub className="h-6 w-6 text-blue-500 hover:text-blue-700" />
                 </a>
               </div>
