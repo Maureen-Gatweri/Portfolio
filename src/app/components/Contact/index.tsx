@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline'
 import { FaBehance, FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa'
@@ -12,6 +12,13 @@ export default function Contact() {
     message: ''
   })
   const [status, setStatus] = useState('')
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+    // Initialize EmailJS with your user ID
+    emailjs.init("YOUR_PUBLIC_KEY")
+  }, [])
 
   const handleChange = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target
@@ -20,26 +27,32 @@ export default function Contact() {
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault()
+    if (!isClient) return
+
     setStatus('Sending...')
 
-    const serviceId = 'service_wht9m4f'
-    const templateId = 'template_fmnhbpc'
-    const userId = 'EheJ--UAHSBZ1x3bC'
+    const serviceId = 'YOUR_SERVICE_ID'
+    const templateId = 'YOUR_TEMPLATE_ID'
 
     const templateParams = {
-      name: formData.name,
-      email: formData.email,
+      to_email: 'maureennmwendwa@gmail.com',
+      from_name: formData.name,
+      from_email: formData.email,
       message: formData.message
     }
 
-    emailjs.send(serviceId, templateId, templateParams, userId)
-      .then(() => {
-        setStatus('Message sent successfully!')
-        setFormData({ name: '', email: '', message: '' })
-      })
-      .catch(() => {
-        setStatus('Failed to send message. Please try again later.')
-      })
+    try {
+      await emailjs.send(serviceId, templateId, templateParams)
+      setStatus('Message sent successfully!')
+      setFormData({ name: '', email: '', message: '' })
+    } catch (error) {
+      console.error('Email error:', error)
+      setStatus('Failed to send message. Please try again later.')
+    }
+  }
+
+  if (!isClient) {
+    return null // or a loading spinner
   }
 
   return (
@@ -69,14 +82,14 @@ export default function Contact() {
               </div>
 
               <div className="flex space-x-4 mt-4">
-                <a href="https://www.behance.net/terryamukoa" target="_blank" rel="noopener noreferrer">
-                  <FaBehance className="h-6 w-6 text-blue-500 hover:text-blue-700" />
+                <a href="https://www.behance.net/maureeenmwendwa" target="_blank" rel="noopener noreferrer">
+                  <FaBehance className="h-6 w-6 text-blue-700 hover:text-blue-700" />
                 </a>
                 <a href="https://www.linkedin.com/in/gatweri-mwendwa-aab087317/" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin className="h-6 w-6 text-blue-500 hover:text-blue-700" />
+                  <FaLinkedin className="h-6 w-6 text-blue-700 hover:text-blue-700" />
                 </a>
                 <a href="https://x.com/Gatweri_Mwendwa" target="_blank" rel="noopener noreferrer">
-                  <FaTwitter className="h-6 w-6 text-blue-500 hover:text-blue-700" />
+                  <FaTwitter className="h-6 w-6 text-blue-700 hover:text-blue-700" />
                 </a>
                 <a href="https://github.com/Maureen-Gatweri" target="_blank" rel="noopener noreferrer">
                   <FaGithub className="h-6 w-6 text-blue-500 hover:text-blue-700" />

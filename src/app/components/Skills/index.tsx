@@ -1,4 +1,4 @@
-
+"use client";
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaJsSquare, FaReact, FaPython, FaFigma, FaJira } from 'react-icons/fa';
