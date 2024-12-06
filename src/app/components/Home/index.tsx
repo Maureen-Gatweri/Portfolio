@@ -7,7 +7,7 @@ const LandingPage: React.FC = () => {
     <section className="flex flex-col md:flex-row items-center justify-center p-8 md:p-20 gap-8 md:gap-[15%] bg-gray-100 min-h-screen text-gray-800">
       <div className="text-center md:text-left">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Hello,<br /> I am Software Engineer.<br />
+          Hello,<br /> I am a Software Engineer<br />
         </h1>
         <p className="text-lg md:max-w-md mb-6 text-gray-700">
           I specialize in creating visually appealing and user-friendly web applications using modern technologies.
